@@ -26,10 +26,6 @@ function validation(){
         document.getElementById("Resultat").classList.add("display")
       }
 
-      if(nom == null){
       
-        document.getElementById("error").innerHTML += "La saisie du nom est obligatoire";
-      
-    }
     
 }
