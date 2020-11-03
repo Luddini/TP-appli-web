@@ -2,11 +2,7 @@ function validation(){
   
     var nom = document.getElementById("Nom").value;
     
-    if(nom.length == 0){
-      
-        document.getElementById("error").innerHTML = "La saisie du nom est obligatoire";
-      
-    }
+   
     document.getElementById("error").innerHTML = "";
   
     for(let item of document.querySelectorAll('.inputAW')){
@@ -30,5 +26,11 @@ function validation(){
         document.getElementById("Resultat").classList.add("display")
       }
 
+      if(nom.length == 0){
+      
+        document.getElementById("error").innerHTML = `La saisie du nom est obligatoire`;
+        document.getElementById("error").classList.remove("display")
+        document.getElementById("Resultat").classList.add("display")
+    }
     
 }
