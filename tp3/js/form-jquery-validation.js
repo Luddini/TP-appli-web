@@ -23,7 +23,7 @@ $( document ).ready(function() {
         } else {
 
             $("#myModal").modal("show")
-            $(".modal-body").html('Veuillez renseigner tous les champs s\'il vous plait');
+            $(".modal-body").html('Veuillez remplir tous les champs s\'il vous plait');
             
 
         }
