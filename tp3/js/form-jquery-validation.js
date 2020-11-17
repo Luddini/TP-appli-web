@@ -22,7 +22,7 @@ $( document ).ready(function() {
 
         } else {
 
-            $('#myModal').modal("show")
+            $("#myModal").modal("show")
             $(".modal-body").html('Veuillez renseigner tous les champs s\'il vous plait');
             
 
