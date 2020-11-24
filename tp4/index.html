@@ -9,25 +9,146 @@
 
         <link rel="apple-touch-icon" href="apple-touch-icon.png">
         <!-- Place favicon.ico in the root directory -->
-
-        <style>
-          body{
-              background-color: #e9ebee;              
-              font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-              font-size: 16px;
-              margin: 0 auto;
-              max-width: 800px;              
-          }
-        </style>
         
-        <!-- Code à dé-commenter si besoin de fichier CSS ou JS -->
-        <!--<link rel="stylesheet" href="style.css">-->
-        <!--<script src="main.js"></script>-->
+        <script src="js/jquery-3.2.1.slim.min.js"></script>
+        <link rel="stylesheet" href="css/bootstrap.min.css">
+        <script src="js/popper.min.js"></script>
+        <script src="js/bootstrap.min.js"></script>
+        <link rel="stylesheet" href="css/style.css">
+        <script src="js/form-jquery-validation.js"></script>
+        <script src="js/gps.js"></script>
+        <script src="js/store.js"></script>
+        
     </head>
     <body>        
-        <h1>TP4</h1>
+        <h1>TP4 AW - Ajouter un contact </h1>
+        <p>HTML5 : GPS, Local Storage</p>
         <!-- Add your site or application content here -->
-        <p>Hello world! This is HTML5 Boilerplate.</p>
-        <img src="../galilee.png" alt="Logo Galilee"/>
+        <div class="container">
+            <form>
+                <div class="form-group row">
+                    <label for="Nom" class="col-sm-2 col-form-label" >Nom</label>
+                    <div class="col-sm-9">
+                        <input type="text" name="Nom" class="form-control" id="Nom" placeholder="Ex: aaaaa"/>
+                    </div>
+                    <div class="col-sm-1" id="nameCounter">0 char.</div>
+                </div>
+                <div class="form-group row">
+                    <label for="Prénom" class="col-sm-2 col-form-label">Prénom</label>
+                    <div class="col-sm-9">
+                        <input type="text" name = "Prénom" class="form-control" id="Prénom" placeholder="Ex: zzzzz">
+                    </div>
+                    <div class="col-sm-1" id="surnameCounter">0 char.</div>
+                </div>
+
+                <div class="form-group row">
+                    <label for="Sexe"class="col-sm-2 col-form-label">Sexe</label>
+                    <div class="col-sm-9">
+                        <select name="Sexe" id="Sexe" class="form-control">
+                            <option value="Homme">Homme</option>
+                            <option value="Femme">Femme</option>
+                            <option value="Autre">Autre</option>
+                        </select>
+                    </div>
+                </div>
+
+               <div class="form-group row"> 
+                    <label for="Date" class="col-sm-2 col-form-label">Date de naissance</label>
+                    <div class="col-sm-9">                
+                        <input type="date" name="Date" id="Date"  class="form-control">
+                    </div>
+                    <div class="col-sm-1" id="dateCounter">0 char.</div>
+               </div>
+               <div class="form-group row">
+                    <label for="Adresse" class="col-sm-2 col-form-label" >Adresse</label>
+                    <div class="col-sm-7"> 
+                        <input type="text" name="Adresse" id="Adresse" class="form-control">
+                        <div></br></div>
+                        <div id="map">
+                            <!--  image Google Map à mettre à jour -->
+                            <img
+                            alt="map"
+                            width="300"
+                            src="https://maps.googleapis.com/maps/api/staticmap?markers=latitude,longitude&zoom=14&size=400x300&scale=2&key=AIzaSyAkmvI9DazzG9p77IShsz_Di7-5Qn7zkcg"
+                            />
+                        </div>
+                    </div>
+                    <div class="col-sm-1">
+                        <button class="btn btn-warning" type="button" id="gps">📍 GPS</button>
+                    </div>
+                    <div class="col-sm-1"></div>
+                    <div class="col-sm-1" id="addCounter">0 char.</div>
+               </div>
+               <div class="form-group row">
+                <label for="E-mail" class="col-sm-2 col-form-label">E-mail</label>
+                <div class="col-sm-9">
+                    <input type="email" name="E-mail" id="mail" placeholder="Ex : tototata@.fr" class="form-control">
+                </div>
+                <div class="col-sm-1" id="mailCounter">0 char.</div>
+               </div>
+                <button type="submit" class="btn btn-primary" value="valider" id="valider" name="valider">Ajouter</button>
+            </form>
+            <hr />
+      <h4>Liste des contacts</h4>
+
+      <table class="table table-striped table-hover">
+        <thead>
+          <tr>
+            <th>Nom</th>
+            <th>Prénom</th>
+            <th>Sexe</th>
+            <th>Date de naissance</th>
+            <th>Adresse</th>
+            <th>Mail</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>oConnor</td>
+            <td>Sarah</td>
+            <td>Femme</td>
+            <td>21/01/2000</td>
+            <td>
+              <a href="https://maps.google.com/?q=Paris">Paris</a>
+            </td>
+            <td>
+              <a href="mailto:sarah.oconnor@blabla.com">sarah.oconnor@blabla.com</a>
+            </td>
+          </tr>
+          <tr>
+            <td>Vandamme</td>
+            <td>JL</td>
+            <td>Homme</td>
+            <td>01/01/1950</td>
+            <td>
+              <a href="https://maps.google.com/?q=Bali">Bali</a>
+            </td>
+            <td>
+              <a href="mailto:jlv@blabla.com">jlv@blabla.com</a>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+
+            <div class="modal" tabindex="-1" role="dialog" id="myModal">
+                <div class="modal-dialog" role="document">
+                  <div class="modal-content">
+                    <div class="modal-header">
+                      <h5 class="modal-title">Modal title</h5>
+                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                      </button>
+                    </div>
+                    <div class="modal-body">
+                      <p>Corps de la modal à modifier après validation du formulaire</p>
+                    </div>
+                    <div class="modal-footer">
+                      <button type="button" class="btn btn-primary">Sauvegarder</button>
+                      <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+        </div>    
     </body>
 </html>
