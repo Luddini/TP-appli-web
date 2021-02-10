@@ -1,11 +1,12 @@
 body{
-    background: #E6DADA;  /* fallback for old browsers */
-    background: -webkit-linear-gradient(to left, #7acce0, #E6DADA);  /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(to left, #61bdd4, #000000); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */              
+    background: #abbaab;  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to left, #ffffff, #abbaab);  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to left, #ffffff, #abbaab); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */ 
     font-family: system, -apple-system, ".SFNSText-Regular", "San Francisco", "Roboto", "Segoe UI", "Helvetica Neue", "Lucida Grande", sans-serif;
-    color : gold;
+    color : rgb(0, 132, 255);
     font-size: 16px;
     margin: 0 auto;
     max-width: 800px;  
 }
 
+.centrage {text-align: center;}
